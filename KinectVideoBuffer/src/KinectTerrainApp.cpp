@@ -3,7 +3,6 @@
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/GlslProg.h"
 #include "cinder/Surface.h"
-#include "cinder/Camera.h"
 #include "cinder/Utilities.h"
 #include "cinder/qtime/MovieWriter.h"
 #include "Kinect.h"
@@ -28,7 +27,6 @@ private:
 	void loadShaders();
 	
 	Kinect mKinect;
-	CameraPersp mCam;
 	
 	gl::GlslProg mCompositeShader;
 	
@@ -46,12 +44,8 @@ void KinectTerrainApp::prepareSettings( Settings* settings )
 
 void KinectTerrainApp::setup()
 {
-	mKinect = Kinect( Kinect::Device() );
-	
 	loadShaders();
-	
-	mCam.setPerspective( 60.0f, getWindowAspectRatio(), 0.0f, 2000.0f );
-	mCam.lookAt( Vec3f( 0.0f, 0.0f, 500.0f ), Vec3f::zero() );
+	mKinect = Kinect( Kinect::Device() );
 	
 	mFrameOffset = 24;
 	mFramesToDraw = 8;
@@ -93,9 +87,7 @@ void KinectTerrainApp::update()
 }
 
 void KinectTerrainApp::draw()
-{
-	// clear out the window with black
-	
+{	
 	mCompositeShader.bind();
 	
 	for ( int i=0; i < mFramesToDraw; i++ )
@@ -108,7 +100,6 @@ void KinectTerrainApp::draw()
 	}
 		
 	gl::drawSolidRect( Rectf( 0, 0, getWindowWidth(), getWindowHeight() ) );
-//	gl::setMatrices( mCam );
 }
 
 void KinectTerrainApp::keyDown( KeyEvent event )
@@ -131,11 +122,11 @@ void KinectTerrainApp::keyDown( KeyEvent event )
 void KinectTerrainApp::loadShaders()
 {
 	try {
-		console() << "Relaoding shaders, typo" << endl;
+		console() << "Reloading shaders" << endl;
 		mCompositeShader = gl::GlslProg( loadFile("../../../resources/Merge.vert"), loadFile("../../../resources/Merge.frag") );
 	}
 	catch (...) {
-		console() << "Ran into problems" << endl;
+		console() << "Ran into problems loading shaders" << endl;
 	}
 	
 	
