@@ -1,0 +1,3 @@
+Source code from playing around with Kinect and other people one afternoon at D|MA.
+
+Uses the Cinder framework and Cinder-Kinect to get things running. On a Mac, you should only need to change your CINDER_PATH variable in XCode and locate the Kinect.cpp file to get everything running.
