@@ -102,10 +102,13 @@ void KinectTerrainApp::draw()
 	{
 		mVideoSurfaces[i*mFrameOffset].bind( i );
 		mDepthSurfaces[i*mFrameOffset].bind( (mFramesToDraw-1) + i );
-		
-		mCompositeShader.uniform( "color" + toString(i), i );
-		mCompositeShader.uniform( "depth" + toString(i), (mFramesToDraw-1) + i );
 	}
+	
+	int colors[8] = { 0, 1, 2, 3, 4, 5, 6, 7 };
+	int depths[8] = { 8, 9, 10, 11, 12, 13, 14, 15 };
+	
+	mCompositeShader.uniform( "colors", colors, mFramesToDraw );
+	mCompositeShader.uniform( "depths", depths, mFramesToDraw );
 		
 	gl::drawSolidRect( Rectf( 0, 0, getWindowWidth(), getWindowHeight() ) );
 //	gl::setMatrices( mCam );
