@@ -20,6 +20,8 @@
 		1556F2FB12ECDB9C00AA3B5B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1556F2F912ECDB9C00AA3B5B /* CinderApp.icns */; };
 		1556F2FD12ECDBB400AA3B5B /* Merge.vert in Sources */ = {isa = PBXBuildFile; fileRef = 1556F2FC12ECDBB400AA3B5B /* Merge.vert */; };
 		1556F2FF12ECDBBB00AA3B5B /* Merge.frag in Sources */ = {isa = PBXBuildFile; fileRef = 1556F2FE12ECDBBB00AA3B5B /* Merge.frag */; };
+		15687C3A12ED0FE900799E75 /* Merge.vert in Resources */ = {isa = PBXBuildFile; fileRef = 1556F2FC12ECDBB400AA3B5B /* Merge.vert */; };
+		15687C3B12ED0FE900799E75 /* Merge.frag in Resources */ = {isa = PBXBuildFile; fileRef = 1556F2FE12ECDBBB00AA3B5B /* Merge.frag */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
@@ -211,6 +213,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15687C3A12ED0FE900799E75 /* Merge.vert in Resources */,
+				15687C3B12ED0FE900799E75 /* Merge.frag in Resources */,
 				1556F2FA12ECDB9C00AA3B5B /* cinder_app_icon.ico in Resources */,
 				1556F2FB12ECDB9C00AA3B5B /* CinderApp.icns in Resources */,
 			);

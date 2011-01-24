@@ -123,7 +123,9 @@ void KinectTerrainApp::loadShaders()
 {
 	try {
 		console() << "Reloading shaders" << endl;
-		mCompositeShader = gl::GlslProg( loadFile("../../../resources/Merge.vert"), loadFile("../../../resources/Merge.frag") );
+		mCompositeShader = gl::GlslProg( loadResource("Merge.vert"), loadResource("Merge.frag") );
+		// when developing on mac, loading this way allow you to edit your shaders without recompiling
+		// mCompositeShader = gl::GlslProg( loadFile("../../../resources/Merge.vert"), loadFile("../../../resources/Merge.frag") );
 	}
 	catch (...) {
 		console() << "Ran into problems loading shaders" << endl;
